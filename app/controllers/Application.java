@@ -43,7 +43,7 @@ public class Application extends Controller {
     { 
         Form<user> filledForm = userForm.bindFromRequest();
         user created = filledForm.get();
-        if(created.password .equals("@29Aug1994@") && (created.username.equals("parth") || created.username.equals("kofti")))
+        if(created.password .equals("devilisalie") && (created.username.equals("parth") || created.username.equals("kofti")))
         {
             session("connected" , created.username );
             return redirect(controllers.routes.Application.index());
