@@ -1,0 +1,13 @@
+@(message: String)
+
+@main("Welcome to Play") {
+
+   <h1>Simple chat</h1>
+   		<form method="POST" action="@routes.Application.submit()">
+  		<input type="text" id="username" name="username" placeholder = "username"/>
+  		</br>
+        <input type="password" id="password" name="password" placeholder ="password"/>
+        <br>
+        <button type="submit" id="sign_in" >Sign In</button>
+        <div>@message</div>
+}

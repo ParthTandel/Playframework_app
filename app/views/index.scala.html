@@ -1,0 +1,15 @@
+@(message: String)
+
+@main("Welcome to Play") {
+
+   <h1>Simple chat</h1>
+        <input type="text" id="name" value = @message />
+        <button onclick="window.location.href='@routes.Application.logout()'">Logout</button>
+          <br><br><input type="text" id="socket-input" placeholder ="write chat here"/>
+        <div id="socket-messages"></div>
+     
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="@routes.Application.wsJs()"></script>
+     
+}
