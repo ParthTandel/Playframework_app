@@ -15,15 +15,15 @@ public class Application extends Controller {
   
     final static Form<user> userForm = Form.form(user.class);
     public static Result index() 
-    {/*
+    {
         if(session("connected") == null)
         {
             return signin();
         }
         else
-        {*/
+        {
             return ok(index.render(session("connected")));
-        //}
+        }
     }
 
     public static Result signin() 
@@ -38,8 +38,8 @@ public class Application extends Controller {
 
     public static Result logout()
     {
-     //   if(session("connected") != null)
-     //      session().remove("connected");
+        if(session("connected") != null)
+            session().remove("connected");
         System.out.println("here");
         return ok(signin.render(""));   
     }
@@ -50,7 +50,7 @@ public class Application extends Controller {
         user created = filledForm.get();
         if(created.password .equals("devilisalie") && (created.username.equals("parth") || created.username.equals("kofti")))
         {
-           // session("connected" , created.username );
+            session("connected" , created.username );
             return redirect(controllers.routes.Application.index());
         }
         else
@@ -63,17 +63,17 @@ public class Application extends Controller {
     }
     
     public static Result audiomp3() {
-    File wavFile = new File("/home/tyson/Try_websockets/public/audio/notify.mp3");
+    File wavFile = new File("public/audio/notify.mp3");
     return ok(wavFile);
     }
 
     public static Result audioogg() {
-    File wavFile = new File("/home/tyson/Try_websockets/public/audio/notify.ogg");
+    File wavFile = new File("public/audio/notify.ogg");
     return ok(wavFile);
     }
 
     public static Result audiowav() {
-    File wavFile = new File("/home/tyson/Try_websockets/public/audio/notify.wav");
+    File wavFile = new File("public/audio/notify.wav");
     return ok(wavFile);
     }
 
