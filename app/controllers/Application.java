@@ -31,6 +31,11 @@ public class Application extends Controller {
         return ok(signin.render(""));
     }
 
+    public static Result temp() 
+    {
+        return ok(temp.render(""));
+    }
+
     public static Result logout()
     {
         if(session("connected") != null)
